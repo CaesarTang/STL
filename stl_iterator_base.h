@@ -105,6 +105,7 @@ struct iterator {
 
 #ifdef __STL_CLASS_PARTIAL_SPECIALIZATION
 
+//迭代器萃取器,萃取出具体型别
 template <class _Iterator>
 struct iterator_traits {
   typedef typename _Iterator::iterator_category iterator_category;
@@ -114,6 +115,7 @@ struct iterator_traits {
   typedef typename _Iterator::reference         reference;
 };
 
+//原生指针的偏特化萃取器
 template <class _Tp>
 struct iterator_traits<_Tp*> {
   typedef random_access_iterator_tag iterator_category;
@@ -123,6 +125,7 @@ struct iterator_traits<_Tp*> {
   typedef _Tp&                        reference;
 };
 
+//const 原生指针的偏特化萃取器
 template <class _Tp>
 struct iterator_traits<const _Tp*> {
   typedef random_access_iterator_tag iterator_category;

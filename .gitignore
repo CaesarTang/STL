@@ -27,3 +27,10 @@
 *.exe
 *.out
 *.app
+
+# vim临时文件
+*.swp
+.DS_Store
+
+# ctags文件
+tags
